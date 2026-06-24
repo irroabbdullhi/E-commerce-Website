@@ -1,0 +1,15 @@
+# Enable Rewrite Engine if needed
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    # Optional URL Rewriting rules can be added here
+</IfModule>
+
+# Prevent directory listing
+Options -Indexes
+
+# Set upload limits (convenience for larger images)
+php_value upload_max_filesize 10M
+php_value post_max_size 12M
+php_value max_execution_time 300
